@@ -1,29 +1,29 @@
-import { Link, NavLink } from "react-router-dom";
-import classes from "./MainHeader.module.css";
-
-const MainHeader = () => {
+import { NavLink } from "react-router-dom";
+import classes from "./MainNavigation.module.css";
+const MainNavigation = () => {
     return (
         <header className={classes.header}>
-            <nav>
+            <div className={classes.logo}> Great Quotes</div>
+            <nav className={classes.nav}>
                 <ul>
                     <li>
                         <NavLink
+                            to="/quotes"
                             className={(navData) =>
                                 navData.isActive ? classes.active : ""
                             }
-                            to="/welcome"
                         >
-                            Welcome
+                            All quotes
                         </NavLink>
                     </li>
                     <li>
                         <NavLink
+                            to="/new-quote"
                             className={(navData) =>
                                 navData.isActive ? classes.active : ""
                             }
-                            to="/products"
                         >
-                            Products
+                            Add a quote
                         </NavLink>
                     </li>
                 </ul>
@@ -31,4 +31,4 @@ const MainHeader = () => {
         </header>
     );
 };
-export default MainHeader;
+export default MainNavigation;
